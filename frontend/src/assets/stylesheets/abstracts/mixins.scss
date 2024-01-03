@@ -1,0 +1,48 @@
+@mixin slow($speed: 0.25s) {
+  transition: $speed linear;
+}
+
+@mixin centerElement() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-verticel() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin center-horizontal() {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin between() {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin font($fz: 1.6px, $fw: 400) {
+  font-size: $fz;
+  font-weight: $fw;
+}
+
+@mixin limitLine($line: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  @include square($size);
+  border-radius: 50%;
+}

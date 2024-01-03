@@ -1,0 +1,15 @@
+@use '../../../assets/stylesheets/abstracts/' as *;
+
+.input+label {
+  border: 1px solid $light-white;
+  user-select: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.input:checked {
+  &+label {
+    border-color: $primary-color;
+  }
+}

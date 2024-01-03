@@ -1,0 +1,45 @@
+@use '../../../assets/stylesheets/abstracts/' as *;
+
+.wrapper {
+  @include center-verticel;
+  border: 1px solid $gray-dark;
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.box {
+  @include centerElement;
+  cursor: pointer;
+  color: $text-grey;
+
+  &:not(:nth-child(2)):hover {
+    color: $primary-color;
+  }
+}
+
+.box:nth-child(2) {
+  @include font(1.6rem, 400);
+  color: $gray-dark;
+  flex: 1;
+  cursor: text;
+}
+
+.sm {
+  @include square(2rem);
+  padding: 10px;
+}
+
+.md {
+  @include square(4rem);
+  padding: 10px;
+}
+
+.lg {
+  @include square(5rem);
+  padding: 10px;
+}
+
+.xl {
+  @include square(6rem);
+  padding: 10px;
+}

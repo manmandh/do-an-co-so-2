@@ -1,0 +1,25 @@
+@use '../../assets/stylesheets/abstracts/' as *;
+
+.scroll {
+  @include slow;
+  background-color: red;
+  border-radius: 50%;
+  width: 5rem;
+  aspect-ratio: 1 / 1;
+  padding: 1rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  opacity: 0;
+  display: none;
+
+  svg {
+    color: #fff;
+  }
+}
+
+.active {
+  opacity: 1;
+  display: block;
+
+}

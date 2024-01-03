@@ -1,0 +1,181 @@
+@use '../../assets/stylesheets/abstracts/' as *;
+
+.wrapper {
+  background-color: $white;
+  margin-top: 5rem;
+}
+
+.scroll {
+  @include font(1.6rem, 400);
+  display: grid;
+  justify-content: flex-start;
+  grid-auto-flow: column;
+  grid-gap: 1.5rem;
+  overflow: auto;
+  overflow-y: scroll;
+  grid-template-columns: unset;
+  padding-block: 2rem;
+}
+
+.scroll>* {
+  scroll-snap-align: start;
+  width: 20rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1rem;
+}
+
+.carts {
+  @include font(1.6rem, 400);
+  --f-columns: 4;
+  --f-gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--f-gap));
+  margin-bottom: calc(-1 * var(--f-gap));
+  padding-block: 2rem;
+
+  @include lg-max {
+    --f-columns: 3;
+  }
+
+  @include sm-max {
+    --f-columns: 2;
+  }
+
+  @include resp-max(420px) {
+    --f-columns: 1;
+  }
+}
+
+.carts>* {
+  margin-left: var(--f-gap);
+  margin-bottom: var(--f-gap);
+  width: calc((100% / var(--f-columns) - var(--f-gap)));
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartTop {
+  position: relative;
+}
+
+.cartImageWrap {
+  overflow: hidden;
+  display: block;
+
+  &:hover {
+    img {
+      transform: scale(1.1)
+    }
+  }
+
+  img {
+    @include slow;
+  }
+}
+
+.sale {
+  position: absolute;
+  background-image: linear-gradient(to right, $primary-color 30%, $warning);
+  padding: 5px 10px;
+  color: $white;
+  top: 0;
+  font-size: 1.4rem;
+  border-radius: 5px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    border-left: 1rem solid $primary-color;
+    border-top: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    transform: translateY(-50%);
+  }
+}
+
+.heart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  color: $red;
+  cursor: pointer;
+}
+
+.badge {
+  background-image: linear-gradient(to right, $primary-color 30%, $warning);
+  color: $white;
+  padding: 5px;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  border-radius: 8px;
+}
+
+.name {
+  @include limitLine(2);
+  text-transform: capitalize;
+  line-height: 1.2;
+  margin-block: 1rem;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.cartBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cartPrice {
+  @include between;
+  margin-top: auto;
+  align-items: center;
+}
+
+.cartBox {
+  @include between;
+  flex-direction: column;
+}
+
+.cartOptions {
+  @include slow;
+  font-size: 2rem;
+  color: $primary-color;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+
+.secondPrice {
+  color: $primary-color;
+  display: block;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.originPrice {
+  text-decoration: line-through;
+  font-size: 1.3rem;
+  color: $text-grey;
+  line-height: 1.5;
+}
+
+.seeMore {
+  text-align: center;
+  margin-top: 2rem;
+}

@@ -1,0 +1,41 @@
+@use '../../assets/stylesheets/abstracts/' as *;
+
+.promotions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding-block: 5rem;
+
+  @include md-max {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.promotion {
+  @include center-horizontal;
+  background-color: white;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border: 1px solid $light-white;
+  place-items: center;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  color: $primary-color;
+
+  @include xl-min {
+    flex-direction: row;
+  }
+}
+
+.icon {
+  @include centerElement;
+  width: fit-content;
+  font-size: 2.5rem;
+}
+
+.paras {
+  line-height: 1.5;
+}

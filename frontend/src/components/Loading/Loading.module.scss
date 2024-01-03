@@ -1,0 +1,16 @@
+@use '../../assets/stylesheets/abstracts/' as *;
+
+.loading {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: transparent;
+  animation: spiner 1.5s linear infinite;
+}
+
+@keyframes spiner {
+  to {
+    transform: rotate(360deg);
+  }
+}

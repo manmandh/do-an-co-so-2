@@ -1,0 +1,238 @@
+@use '../../assets/stylesheets/abstracts/' as *;
+
+.header {
+  background-color: $primary-color;
+}
+
+.header-top {
+  border-bottom: 1px solid $light-white;
+
+  &-wrapper {
+    padding: 1.5rem 1rem;
+    @include between;
+    align-items: center;
+    max-width: 120rem;
+    width: 100%;
+    margin-inline: auto;
+
+    @include xl-min {
+      padding: 1.5rem 3rem;
+    }
+  }
+
+  .header-logo {
+    max-width: 8rem;
+    aspect-ratio: 1 / 1;
+  }
+
+  .header-search {
+    @include center-verticel;
+    background-color: $white;
+    border-radius: 1rem;
+    max-width: 50rem;
+    width: 100%;
+
+    svg {
+      color: $gray;
+      padding: 1rem;
+    }
+  }
+
+  .search-field {
+    @include font(1.6rem, 400);
+    border: none;
+    width: 100%;
+  }
+
+  .search-btn {
+    @include font(1.6rem, 400);
+    color: $red;
+    padding: 1rem;
+    flex-shrink: 0
+  }
+
+  .header-top-more {
+    @include center-verticel;
+    gap: 2rem;
+
+    svg {
+      color: $white;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .main-more {
+      display: none;
+    }
+
+    .cart-icon {
+      position: relative;
+    }
+
+    .cart-number {
+      @include font(1.2rem, 800);
+      @include centerElement;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+      color: $primary-color;
+      background-color: $white;
+      border-radius: 50%;
+      width: 1.5rem;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  @include md-max {
+    .header-search {
+      max-width: 40rem;
+    }
+
+    .header-top-more {
+      position: fixed;
+      background-color: $primary-color;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      justify-content: space-between;
+      padding: 1.5rem 3rem;
+      z-index: 99999;
+
+      svg {
+        padding: 1rem;
+      }
+    }
+
+  }
+
+  @include sm-max {
+    &-wrapper {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .header-top-more .main-more {
+      display: block;
+    }
+  }
+}
+
+
+.header-menu {
+  max-width: 120rem;
+  padding-inline: 3rem;
+  margin-inline: auto;
+
+  .menus {
+    @include centerElement;
+    gap: 2rem;
+  }
+
+  .menu {
+    position: relative;
+  }
+
+  .menu-link {
+    @include font(1.6rem, 400);
+    @include slow;
+    padding: 3rem 0;
+    color: $white;
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+
+    svg {
+      @include slow;
+      font-size: .8em;
+    }
+  }
+
+  .menu:hover {
+    .submenu {
+      transform: perspective(600px) rotateX(0deg);
+    }
+  }
+
+  .menu-link:hover,
+  .menu-link.active {
+    color: $warning;
+  }
+
+  .menu-link:hover {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .submenu {
+    @include slow;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: $white;
+    padding: 1rem;
+    transform-origin: 0 0;
+    transform: perspective(600px) rotateX(-90deg);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    z-index: 99;
+  }
+
+  .menu-child {
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    gap: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .menu-child-name,
+  .menu-child-title {
+    @include slow;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  @include sm-max {
+    @include slow;
+    position: fixed;
+    padding: 2rem;
+    background-color: $white;
+    left: 0;
+    right: 0;
+    top: 0;
+    max-height: calc(100vh - 0px);
+    height: 100%;
+    z-index: 9;
+    transform-origin: 0 0;
+    transform: perspective(600px) rotateY(90deg);
+
+    &.active {
+      transform: perspective(600px) rotateY(0deg);
+    }
+
+    .menus {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .menu-link {
+      color: $gray-dark;
+      padding: 1rem;
+    }
+
+    .submenu {
+      display: none;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+}

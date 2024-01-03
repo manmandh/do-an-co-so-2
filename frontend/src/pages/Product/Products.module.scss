@@ -1,0 +1,178 @@
+@use '../../assets/stylesheets/abstracts/' as *;
+
+.productName {
+  @include font(2.5rem, 800);
+  text-transform: capitalize;
+  line-height: 1.5;
+}
+
+.textHighLight {
+  color: $primary-color;
+}
+
+.line {
+  padding-inline: 1.5rem;
+}
+
+.priceBox {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $light-white;
+}
+
+.originPrice {
+  @include font(2.5rem, 800);
+  color: $primary-color;
+  line-height: 1.5;
+}
+
+.secondPrice {
+  line-height: 1.5;
+  text-decoration: line-through;
+  color: $text-grey;
+  font-weight: 100;
+}
+
+.saleId,
+.optionBox,
+.options,
+.quantityBox,
+.actions,
+.benefits,
+.benefit {
+  @include center-verticel;
+  gap: 1rem
+}
+
+.saleId {
+  border-bottom: 1px solid $light-white;
+  padding-bottom: 2rem;
+  flex-wrap: wrap;
+
+  .coupons {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.option {
+  input:checked+label {
+    border: 1px solid #000;
+  }
+}
+
+.benefits {
+  flex-wrap: wrap;
+
+  @include lg-max {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+}
+
+.benefit {
+  margin-top: 1rem;
+
+  .icon {
+    @include square(3.2rem);
+    @include centerElement;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    color: $primary-color;
+    background-color: lighten($primary-color, 30%);
+  }
+}
+
+.actions {
+  flex-wrap: wrap;
+
+  @include lg-max {
+    width: 100%;
+  }
+}
+
+.detailsBox,
+.moreProducts {
+  background-color: $white;
+  margin-top: 3rem;
+  padding: 2rem;
+
+  .title {
+    @include font(2rem, 300);
+    line-height: 1.5;
+    border-bottom: 1px solid $light-white;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .title:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(50%);
+    width: 10rem;
+    height: 2px;
+    background-color: $primary-color;
+  }
+}
+
+.details p {
+  @include font(1.4rem, 400);
+  line-height: 1.5;
+}
+
+.specifications {
+  flex-shrink: 0;
+}
+
+.table {
+  @include font(1.4rem, 100);
+  display: block;
+  max-height: 25rem;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, transparent 50%, #fff);
+  }
+
+  &.open {
+    max-height: unset;
+
+    &:before {
+      background-image: unset;
+    }
+  }
+}
+
+.row {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+
+  &:nth-child(odd) {
+    background-color: #ddd;
+  }
+}
+
+.cell {
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+.newsBox {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.newImage {
+  width: 8rem;
+  display: inline-block;
+  flex-shrink: 0;
+}

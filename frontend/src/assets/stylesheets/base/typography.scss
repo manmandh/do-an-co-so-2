@@ -1,0 +1,26 @@
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  background-color: transparent;
+  outline: none;
+}
+
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-display: swap;
+  text-rendering: optimizeSpeed;
+  background-color: #e7eef6;
+}

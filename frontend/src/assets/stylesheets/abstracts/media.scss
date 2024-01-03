@@ -1,0 +1,85 @@
+$break-point: (
+  xl: '1199.98px',
+  lg: '991.98px',
+  md: '767.98px',
+  sm: '575.98px',
+  xs: '319.98px'
+);
+
+@mixin xl-max {
+  @media screen and (max-width: map-get($break-point, xl)) {
+    @content;
+  }
+}
+
+@mixin lg-max {
+  @media screen and (max-width: map-get($break-point, lg)) {
+    @content;
+  }
+}
+
+@mixin md-max {
+  @media screen and (max-width: map-get($break-point, md)) {
+    @content;
+  }
+}
+
+@mixin sm-max {
+  @media screen and (max-width: map-get($break-point, sm)) {
+    @content;
+  }
+}
+
+@mixin xs-max {
+  @media screen and (max-width: map-get($break-point, xs)) {
+    @content;
+  }
+}
+
+@mixin resp-max($br) {
+  @media screen and (max-width: $br) {
+    @content;
+  }
+}
+
+@mixin xl-min {
+  @media screen and (min-width: map-get($break-point, xl)) {
+    @content;
+  }
+}
+
+@mixin lg-min {
+  @media screen and (min-width: map-get($break-point, lg)) {
+    @content;
+  }
+}
+
+@mixin md-min {
+  @media screen and (min-width: map-get($break-point, md)) {
+    @content;
+  }
+}
+
+@mixin sm-min {
+  @media screen and (min-width: map-get($break-point, sm)) {
+    @content;
+  }
+}
+
+@mixin xs-min {
+  @media screen and (min-width: map-get($break-point, xs)) {
+    @content;
+  }
+}
+
+@mixin resp-min($br) {
+  @media screen and (min-width: $br) {
+    @content;
+  }
+}
+
+@mixin resp($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

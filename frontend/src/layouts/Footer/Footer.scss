@@ -1,0 +1,78 @@
+@use '../../assets/stylesheets/abstracts/' as *;
+
+.footer {
+  background-color: $gray-dark;
+  color: $white;
+  padding-bottom: 6rem;
+}
+
+.footer-wrapper {
+  max-width: 120rem;
+  margin-inline: auto;
+  padding: 3rem 1rem 0 1rem;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 25rem);
+  justify-content: space-between;
+  gap: 5rem;
+  border-bottom: 1px dotted $light-white;
+  padding-bottom: 3rem;
+
+  &-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &-title {
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  .footer-item-desc {
+    @include font(1.4rem, 100);
+    margin-top: 1rem;
+    @include slow;
+    color: $white;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .footer-socials {
+    @include center-verticel;
+    gap: 1rem;
+
+    svg {
+      @include slow;
+      cursor: pointer;
+    }
+
+    svg:hover {
+      color: $light-white;
+    }
+  }
+
+  .footer-download {
+    @include center-verticel;
+    gap: 1rem
+  }
+}
+
+.footer-bottom {
+  @include between;
+  @include font(1.4rem, 400);
+  align-items: center;
+  padding: 3rem 1rem;
+
+  .footer-logo {
+    max-width: 5rem;
+  }
+
+  .dm {
+    color: $primary-color;
+  }
+}

@@ -1,0 +1,30 @@
+@use '../abstracts/' as *;
+
+.body-content {
+  max-width: 120rem;
+  margin-inline: auto;
+}
+
+.wrapper {
+  padding: 3rem 1rem;
+
+  @include xl-min {
+    padding: 3rem;
+  }
+}
+
+.ss-title {
+  border-bottom: 1px solid $light-white;
+  position: relative;
+
+  &:before {
+    content: '';
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    transform: translateY(-50%);
+    width: 300px;
+    background-color: $primary-color;
+  }
+}

@@ -1,0 +1,68 @@
+@use '../../assets/stylesheets/abstracts/' as *;
+
+.button {
+  @include font(1.6rem, 400);
+  @include slow;
+
+  &.icon {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+.primary {
+  background-color: $primary-color;
+  color: $white;
+}
+
+.md {
+  padding: 8px 12px;
+  border-radius: 8px;
+
+  &.icon {
+    gap: 3px;
+  }
+}
+
+.lg {
+  padding: 10px 24px;
+  border-radius: 12px;
+
+  &.icon {
+    gap: 5px;
+  }
+}
+
+.xl {
+  padding: 15px 32px;
+  border-radius: 15px;
+
+  &.icon {
+    gap: 7px;
+  }
+}
+
+.bg {
+  background-color: $primary-color;
+  color: $white;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.outline {
+  background-color: transparent;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $white;
+  }
+}
+
+.full {
+  width: 100%;
+  text-align: center;
+}

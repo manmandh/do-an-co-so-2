@@ -1,0 +1,6 @@
+export { default as Button } from './Button/Button'
+export { default as ButtonScrollTop } from './ButtonScrollTop/ButtonScrollTop'
+export { default as Cart } from './Cart/Cart'
+export { default as Promotion } from './Promotion/Promotion'
+export { default as SlideShow } from './SlideShow/SlideShow'
+export { default as Loading } from './Loading/Loading'

@@ -1,0 +1,21 @@
+@use '../../assets/stylesheets/abstracts/' as *;
+
+.introduce {
+  max-width: 120rem;
+  margin-inline: auto;
+
+}
+
+.wrapper {
+  padding: 3rem;
+}
+
+.heading {
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+.desc {
+  @include font(1.6rem, 400);
+  line-height: 1.4;
+}

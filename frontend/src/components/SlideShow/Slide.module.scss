@@ -1,0 +1,17 @@
+@use '../../assets/stylesheets/abstracts/' as *;
+
+.slideWrapper {
+  display: flex;
+  max-width: 50%;
+  width: 100%;
+  overflow: scroll;
+  scroll-snap-type: x proximity;
+}
+
+.image {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  cursor: grab;
+}

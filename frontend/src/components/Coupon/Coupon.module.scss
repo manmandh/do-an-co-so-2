@@ -1,0 +1,16 @@
+@use '../../assets/stylesheets/abstracts/' as *;
+
+.coupon {
+  @include font(1.4rem, 400);
+  color: $primary-color;
+  position: relative;
+  padding: 5px 8px;
+  display: inline-block;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background-color: currentColor;
+  opacity: .2;
+}
